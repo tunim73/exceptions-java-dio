@@ -11,9 +11,23 @@ public class CheckedException {
         try {
             imprimirArquivoNoConsole(nomeDoArquivo);
         } catch (FileNotFoundException e) {
+
+            /*
+                O método "imprimirArquivoNoConsole" lança uma exception do tipo "IOException", só ver no fim da assinatura do método. 
+
+                Porém essa exception é uma classe, ou uma interface pai, de várias outras exceptions. Por exemplo,
+                a exception deste catch "FileNotFoundException" é filha da "IOException". 
+                
+                Se colocar o catch (IoException) antes do catch "FileNotFoundException", esta nunca será trata de forma específica, sempre de forma genérica, como se fosse qualquer outra exception da classe pai. 
+                
+                Então exception mais específicas vem antes das mais genéricas.
+             */
+
+
             JOptionPane.showMessageDialog(null,
                     "Revise o nome do arquivo que você deseja imprimir! " + e.getCause());
-            e.printStackTrace();
+            e.printStackTrace(); //imprime a stack, até onde foi dado o erro.
+
         } catch (IOException e){
             //e.printStackTrace();
             JOptionPane.showMessageDialog(null,
