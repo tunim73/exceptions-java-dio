@@ -41,7 +41,17 @@ public class ExceptionCustomizada_1 {
         try {
             return new BufferedReader(new FileReader(nomeDoArquivo));
         } catch (FileNotFoundException e) {
+
+            /*
+            Aqui o catch pegou a exception FileNotFoundException, lançou uma nova exception customizada
+            que, da mesma forma tem que ser tratada.
+
+            Seja um try catch aqui, ou lançado para o método que chamou chamou esse método, com "throws ImpossivelAberturaDeArquivoException"
+            
+            */
             throw new ImpossivelAberturaDeArquivoException(file.getName(), file.getPath());
+
+
         }
     }
 }
