@@ -15,6 +15,11 @@ public class ExceptionCustomizada_2 {
                 int resultado = numerador[i] / denominador[i];
                 System.out.println(resultado);
             } catch (DivisaoNaoExataException | ArithmeticException | ArrayIndexOutOfBoundsException e) {
+                /*
+                A forma de pegar varios erros diferentes, só fiquei com a curiosidade que assim 
+                de como tratar cada uma de forma específica aqui dentro, acredito eu que eva ter uma propriedade no
+                objeto para isso, no ruim, um catch para cada e trabalhando em cima de forma especializada.
+                */
                 e.printStackTrace();
                 JOptionPane.showMessageDialog(null, e.getMessage());
             }
